@@ -13,5 +13,5 @@ void printScreen(){
 }
 
 void wait(unsigned int time){
-
+	for(int i=0;i<=time*5000000;i++){}
 }
