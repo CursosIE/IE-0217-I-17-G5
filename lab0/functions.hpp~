@@ -8,7 +8,7 @@ using namespace std;
 
 void clearScreen();
 void moveScreen();
-void printScreen(char array[10], int i);
+void printScreen(char array[10][1], int i);
 void wait(unsigned int time);
 
 #endif

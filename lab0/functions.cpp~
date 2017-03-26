@@ -11,7 +11,7 @@ void moveScreen(){
 void printScreen(char array[10], int i){
 
 	for (int j = 0; j<10; j++){
-	array[j] = (rand() % (126 +1 - 32) + 32);
+	array[j] = (rand() % (126 +1 - 33) + 33);
 	//cout << (char) array[j];
 	
 	printf("%c\n", array[j]);
