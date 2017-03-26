@@ -1,18 +1,21 @@
 
 #include "functions.hpp"
 
-int main()
+int main(int argc, char* argv[])
 {
 	srand(time(NULL));
-	char array[10];	
+
 	clearScreen();
-	cout << "línea 1 \n";
+
+	//el primer argumento va ser el número de columnas de la terminal
+	int tamano = atoi(argv[1]);
+	char array[tamano];
+
+	printScreen(array,tamano);
 	wait(100);
-	cout << "línea 2 \n";
+	printScreen(array,tamano);
 
-	printScreen(array,0);
-
-  return 0;
+	return 0;
 }
 
 
