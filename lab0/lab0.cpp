@@ -3,11 +3,12 @@
 
 int main(int argc, char* argv[])
 {
-	int tamano = atoi(argv[1]);
-	//char array[tamano];
+	cout << "\x1b[32m\x1b[1m";
+	int ancho = atoi(argv[1]);
+	int alto = atoi(argv[2]);
+	//char array[ancho];
 	queue<char*>cola;
-	int alto = 10;
-	int ancho = 80;
+
 
 	srand(time(NULL));
 
@@ -15,7 +16,7 @@ int main(int argc, char* argv[])
 
 
 	for (;;){
-		clearScreen();
+		moveScreen();
 		char* temp = (char*)malloc(ancho*sizeof(char));
 		printScreen(temp,ancho);
 		printLine(temp, ancho);
