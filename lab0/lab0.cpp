@@ -6,9 +6,13 @@ int main(int argc, char* argv[])
 	cout << "\x1b[32m\x1b[1m";
 	int ancho = atoi(argv[1]);
 	int alto = atoi(argv[2]);
-
 	queue<char*>cola;
 	srand(time(NULL));
+	int vacios[ancho];
+	for(int i=0;i<ancho;i++){
+		vacios [i]=10;
+	}
+
 
 	clearScreen();
 
@@ -16,8 +20,8 @@ int main(int argc, char* argv[])
 	for (;;){
 		moveScreen();
 		char* temp = (char*)malloc(ancho*sizeof(char));
-		printScreen(temp,ancho);
-		printLine(temp, ancho);
+		printLine(temp, ancho, vacios);
+		printScreen(temp, ancho);
 		cola.push(temp);
 
 		int queue_size = cola.size();
@@ -29,7 +33,7 @@ int main(int argc, char* argv[])
 			}
 
 			char* element = cola.front();
-			printLine(element, ancho);
+			printScreen(element, ancho);
 			cola.pop();
 			cola.push(element);
 			}
@@ -40,7 +44,7 @@ int main(int argc, char* argv[])
 			free(x);
 		}
 
-		wait(25);
+		wait(10);
 	}
 
 

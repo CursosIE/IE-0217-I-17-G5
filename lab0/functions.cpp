@@ -11,17 +11,27 @@ void moveScreen(){
 
 }
 
-void printScreen(char* array,  int tamano){
-
+void printLine(char* array,  int tamano, int* vacios){
+	int numero;
 	for (int j = 0; j<tamano; j++){
-	array[j] = (char)(rand() % 95 + 32);
-	//cout << array[j];
+		numero = rand() % 127;
+		if(numero<32){
+			array[j] = ' ';
+			if(vacios[j]>=7){
+			vacios[j]=0;
+			}
+		}else{
+			if(vacios[j]<7){
+				array[j]=' ';
+				vacios[j]++;
+			}else{
+				array[j] = (char)numero;
+			}
+		}
 	}
-	//cout << array[0];	
-	//cout << endl;
 }
 
-void printLine(char* temp, int ancho){
+void printScreen(char* temp, int ancho){
 
 	for (int i = 0; i<ancho; i++){
 		cout << temp[i];
