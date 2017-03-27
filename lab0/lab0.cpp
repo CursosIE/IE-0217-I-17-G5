@@ -3,19 +3,29 @@
 
 int main(int argc, char* argv[])
 {
+	//esto hace que la semilla del rand() sea con el reloj, por lo que aumenta alateoreidad
+	srand(time(NULL));
+
+	//con este codigo ANSI se define color verde y negrita
 	cout << "\x1b[32m\x1b[1m";
+
+	//se reciben el alto y ancho de la terminal de los parametros en consola
 	int ancho = atoi(argv[1]);
 	int alto = atoi(argv[2]);
+
+	//se inicializa la cola
 	queue<char*>cola;
-	srand(time(NULL));
+
+	//se inicializa un vector que va servir para decidir columanas en blanco
 	int vacios[ancho];
+
+	//se inicializa el vector aleatoreamente para ver que columnas empiezan en blanco
 	for(int i=0;i<ancho;i++){
-		vacios [i]=10;
+		vacios [i]= rand() % 1 + 6;
 	}
 
 
 	clearScreen();
-
 
 	for (;;){
 		moveScreen();
@@ -36,7 +46,7 @@ int main(int argc, char* argv[])
 			printScreen(element, ancho);
 			cola.pop();
 			cola.push(element);
-			}
+		}
 
 		if(queue_size > alto){
 			char* x = cola.front(); 
@@ -46,8 +56,6 @@ int main(int argc, char* argv[])
 
 		wait(10);
 	}
-
-
 	return 0;
 }
 

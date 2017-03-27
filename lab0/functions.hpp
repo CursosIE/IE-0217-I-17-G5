@@ -2,7 +2,6 @@
 #define FUNCTIONS_H
 #include <stdlib.h> //rand
 #include <iostream>
-#include <cstring>
 #include <queue>
 
 
