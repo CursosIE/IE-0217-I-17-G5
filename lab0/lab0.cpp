@@ -6,10 +6,8 @@ int main(int argc, char* argv[])
 	cout << "\x1b[32m\x1b[1m";
 	int ancho = atoi(argv[1]);
 	int alto = atoi(argv[2]);
-	//char array[ancho];
+
 	queue<char*>cola;
-
-
 	srand(time(NULL));
 
 	clearScreen();
@@ -42,13 +40,9 @@ int main(int argc, char* argv[])
 			free(x);
 		}
 
-		sleep(1);
+		wait(25);
 	}
 
-
-	//printScreen(array,tamano);
-	//wait(100);
-	//printScreen(array,tamano);
 
 	return 0;
 }

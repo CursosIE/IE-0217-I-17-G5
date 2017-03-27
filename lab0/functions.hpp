@@ -1,11 +1,9 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 #include <stdlib.h> //rand
-#include <stdio.h>
 #include <iostream>
 #include <cstring>
 #include <queue>
-#include <unistd.h>
 
 
 using namespace std;
