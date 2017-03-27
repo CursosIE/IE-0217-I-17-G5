@@ -1,25 +1,35 @@
-
+/**
+	 * @file lab0.cpp
+	 * En este archivo se encuentra el main del programa que genera el efecto Matrix en una terminal 
+	 *
+	 * @author Berni Mora
+	 * @author Josselin Porras 
+	 * @author Mauricio Corrales
+	 */
 #include "functions.hpp"
 
 int main(int argc, char* argv[])
 {
-	//esto hace que la semilla del rand() sea con el reloj, por lo que aumenta alateoreidad
+	//Esto hace que la semilla del rand() sea con el reloj, por lo que aumenta alateoreidad
 	srand(time(NULL));
 
-	//con este codigo ANSI se define color verde y negrita
+	//Con este codigo ANSI se define color verde y negrita
 	cout << "\x1b[32m\x1b[1m";
 
-	//se reciben el alto y ancho de la terminal de los parametros en consola
+	/**Se reciben el alto y ancho de la terminal de los parametros en consola
+@param[in] ancho Indica el ancho de la terminal
+@param[in] alto Indica el alto de la terminal
+*/
 	int ancho = atoi(argv[1]);
 	int alto = atoi(argv[2]);
 
-	//se inicializa la cola
+	//Se inicializa la cola
 	queue<char*>cola;
 
-	//se inicializa un vector que va servir para decidir columanas en blanco
+	//@param[in] vacios Vector decidir columanas en blanco
 	int vacios[ancho];
 
-	//se inicializa el vector aleatoreamente para ver que columnas empiezan en blanco
+	//Se inicializa el vector aleatoreamente para ver que columnas empiezan en blanco
 	for(int i=0;i<ancho;i++){
 		vacios [i]= rand() % 1 + 6;
 	}
@@ -56,6 +66,7 @@ int main(int argc, char* argv[])
 
 		wait(10);
 	}
+
 	return 0;
 }
 
