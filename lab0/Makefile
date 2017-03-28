@@ -13,10 +13,10 @@ build:
 	@doxygen -g config
 	@doxygen config
 clean:
-	@rm -rf ./$(BIN)
-	@rm config
-	@rm -rf html/
-	@rm -rf latex/
+	@rm -rf ./$(BIN) 2>/dev/null || true
+	@rm config 2>/dev/null || true
+	@rm -rf html/ 2>/dev/null || true
+	@rm -rf latex/ 2>/dev/null || true
 run:
 	./$(BIN)
 
