@@ -8,6 +8,12 @@
 	 */
 #include "functions.hpp"
 
+/** @name main
+*Se reciben el alto y ancho de la terminal como parametros en consola
+*@param[in] ancho Indica el ancho de la terminal
+*@param[in] alto Indica el alto de la terminal
+*/
+///@{
 int main(int argc, char* argv[])
 {
 	//Esto hace que la semilla del rand() sea con el reloj, por lo que aumenta alateoreidad
@@ -16,10 +22,7 @@ int main(int argc, char* argv[])
 	//Con este codigo ANSI se define color verde y negrita
 	cout << "\x1b[32m\x1b[1m";
 
-	/**Se reciben el alto y ancho de la terminal de los parametros en consola
-@param[in] ancho Indica el ancho de la terminal
-@param[in] alto Indica el alto de la terminal
-*/
+
 	int ancho = atoi(argv[1]);
 	int alto = atoi(argv[2]);
 

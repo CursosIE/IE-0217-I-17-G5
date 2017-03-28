@@ -9,7 +9,8 @@
 	 */
 
 /** @name clearScreen
- *   Codigos ANSI para limpiar pantalla(\x1B[2J) y poner el puntero al inicio(\x1B[H)
+ *   Se utilizan codigos ANSI para limpiar pantalla(\x1B[2J) y poner el puntero en la esquina
+ *   superior izquierda(\x1B[H)
  */
 ///@{
 void clearScreen(){
@@ -28,7 +29,12 @@ void moveScreen(){
 ///@}
 
 /** @name printLine
- *   Llena la cola, si el caracter ascii es menor a 32 (caracteres especiales) se cambia por un espacio en blanco, y se siguen poniendo 7 espacios en blanco de forma consecutiva para dar el efecto de columnas
+ *   Llena la cola, si el caracter ascii es menor a 32 (caracteres especiales) se cambia por un espacio
+ *   en blanco, y se siguen poniendo 7 espacios en blanco de forma consecutiva para dar el efecto de columnas
+ *	@param[in] array Arreglo de char que se llenara aletoriamente
+ *	@param[in] tamano Cantidad de entradas del arreglo array
+ *	@param[in] vacios Vector de enteros que permite contar cuantos caracteres tipo espacio consecutivos por
+ *	columna se han impreso.
  */
 ///@{
 void printLine(char* array,  int tamano, int* vacios){
@@ -54,6 +60,8 @@ void printLine(char* array,  int tamano, int* vacios){
 
 /** @name printScreen
  *  Imprime el contenido actual de la cola
+ *	@param[in] temp Arreglo de char ue se va imprimir en pantalla
+ *	@param[in] ancho Cantidad de entradas del arreglo temp
  */
 ///@{
 void printScreen(char* temp, int ancho){
@@ -66,9 +74,9 @@ void printScreen(char* temp, int ancho){
 ///@}
 
 /** @name wait
- *  Se crea un for vacio en forma de retraso, la multilpicacion por 5000000 es para invocar la funcion wait() con parametros facil de manejar numeros bajos */
+ *  Se crea un for vacio en forma de retraso, la multilpicacion por 5000000 es para invocar
+ *  la funcion wait() con parametros facil de manejar numeros bajos */
 ///@{
-
 void wait(unsigned int time){
 	for(int i=0;i<=time*5000000;i++){}
 }
